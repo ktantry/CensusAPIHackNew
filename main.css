@@ -1,0 +1,19 @@
+h1, h2, p, .submit-button, .sector-input, .firm-age-input {
+	text-align: center;
+}
+
+body {
+	background-color: green;
+}
+
+.input-div {
+	text-align: center;
+}
+
+input {
+	text-align: left;
+}
+
+.submit-button {
+	margin-top: 50px;
+}
