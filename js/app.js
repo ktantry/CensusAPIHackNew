@@ -15,6 +15,12 @@ var censusAPI = function(sector, age){
 
 };
 
-var census_array = censusAPI(70,'c');
-console.log(censusAPI(70,'c'));
-console.log(census_array[1][2]);
+var showResults = function(sic1, fage4){
+	var census_array = censusAPI(sic1,fage4);
+	console.log(census_array);
+	var sector = census_array.sic1;
+	console.log(sector);
+}
+
+showResults();
+

@@ -10,22 +10,41 @@
 <body>
 	<h1>Type In Your Sector and Firm's Age</h1>
 	<h2>Find out how many firms fit the criteria</h2>
-	<p>Type Your Sector</p>
-	<div class='sector-input'>
-		<input></input>
+	<p>Select Your Sector</p>
+	<div class='sector-div'>
+		<select class='sector-dropdown'>
+			<option value='Economy Wide'>Economy Wide</option>
+			<option value='Agriculture, Forestry, and Fishing'>Agriculture, Forestry, and Fishing</option>
+			<option value='Mining'>Mining</option>
+			<option value='Construction'>Construction</option>
+			<option value='Transportation, Communication, and Public Utilities'>Transportation, Communication, and Public Utilities</option>
+			<option value='Wholesale Trade'>Wholesale Trade</option>
+			<option value='Finance, Insurance, and Real Estate'>Finance, Insurance, and Real Estate</option>
+			<option value='Services'>Services</option>
+		</select>
 	</div>
-	<p>Type Your Firm's Age</p>
-	<div class='firm-age-input'>
-		<input></input>
+	<p>Select Your Firm's Age</p>
+	<div class='firm-age-div'>
+		<select class='firm-age-dropdown'>
+			<option value='Economy Wide – All Ages (selected by default)'>Economy Wide – All Ages (selected by default)</option>
+			<option value='0'>0</option>
+			<option value='1'>1</option>
+			<option value='3'>3</option>
+			<option value='4'>4</option>
+			<option value='5'>5</option>
+			<option value='6-10'>6-10</option>
+			<option value='11-15'>11-15</option>
+			<option value='16-20'>16-20</option>
+			<option value='21-25'>21-25</option>
+			<option value='26+'>26+</option>
+			<option value='Left Censored'>Left Censored</option>
+		</select>
 	</div>
-	<select>
-		<option value='Industry 1'>Industry 1</option>
-		<option value='Industry 2'>Industry 2</option>
-		<option value='Industry 3'>Industry 3</option>
-		<option value='Industry 4'>Industry 4</option>
-	</select>
 	<div class='submit-button'>
 		<button>Submit</button>
+	</div>
+	<div>
+		<p class='results-paragraph'>There are X number of people within those criteria</p>
 	</div>
 	<div>
 		

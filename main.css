@@ -1,5 +1,14 @@
-h1, h2, p, .submit-button, .sector-input, .firm-age-input {
+h1, h2, p, .submit-button, .sector-div, .firm-age-div {
 	text-align: center;
+	margin-top: 40px;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+.sector-dropdown, .firm-age-dropdown {
+	width: 120px;
 }
 
 body {
@@ -14,6 +23,26 @@ input {
 	text-align: left;
 }
 
+select {
+	text-align: center;
+}
+
+.sector-dropdown, .firm-age-dropdown {
+	width: 250px;
+}
+
 .submit-button {
 	margin-top: 50px;
+}
+
+button {
+	border-radius: 4px;
+	width: 100px;
+	height: 50px;
+}
+
+.results-paragraph {
+	font-size: 25px;
+	margin-top: 170px;
+	color: blue;
 }
