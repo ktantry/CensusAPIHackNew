@@ -10,17 +10,61 @@ var censusAPI = function(sector, age){
     var result = $.getJSON(
        "http://api.census.gov/data/bds/firms?get=sic1,emp,fage4&for=us:*&sic1=" + sector + "&fage4=" + age + "&time=2012"
     ).done(function(res) {
-      console.log(res);
+  		$.each(res, function(index, value) {
+		var index_array = res[index];
+			$.each(index_array, function(i, v){
+				console.log(index_array[i]);
+			})
+		});
     });
-
 };
 
-var showResults = function(sic1, fage4){
-	var census_array = censusAPI(sic1,fage4);
-	console.log(census_array);
-	var sector = census_array.sic1;
-	console.log(sector);
-}
+$(document).ready(function(){
+	$('button').mousedown(function(){
 
-showResults();
+		//Create Sector Hash
+		var sector_hash = new Object();
+	  		sector_hash['Economy Wide'] = 0;
+	  		sector_hash['Agriculture, Forestry, and Fishing'] = 7;
+	  		sector_hash['Mining'] = 10;
+	  		sector_hash['Construction'] = 15;
+	  		sector_hash['Manufacturing'] = 20;
+	  		sector_hash['Transportation, Communication, and Public Utilities'] = 40;
+	  		sector_hash['Wholesale Trade'] = 50;
+	  		sector_hash['Retail Trade'] = 52;
+	  		sector_hash['Finance, Insurance, and Real Estate'] = 60;
+	  		sector_hash['Services'] = 70;
+
+	  	var firm_age_hash = new Object();
+	  		firm_age_hash['0'] = 'a';
+	  		firm_age_hash['1'] = 'b';
+	  		firm_age_hash['3'] = 'c';
+	  		firm_age_hash['4'] = 'e';
+	  		firm_age_hash['5'] = 'f';
+	  		firm_age_hash['6-10'] = 'g';
+	  		firm_age_hash['11-15'] = 'h';
+	  		firm_age_hash['16-20'] = 'i';
+	  		firm_age_hash['21-25'] = 'j';
+	  		firm_age_hash['26+'] = 'k';
+	  		firm_age_hash['Left Censored'] = 'l';
+	  		firm_age_hash['Economy Wide – All Ages (selected by default)'] = 'm';
+
+				$(".sector-dropdown").each(function() {
+			    	var sector_selected = (this.options[this.selectedIndex].value);		    		
+	    		});
+				alert(sector_hash[sector_selected]);   
+
+		    		/*alert(sector_selected);*/
+		    	$(".firm-age-dropdown").each(function() {
+		    	var firm_age_selected = (this.options[this.selectedIndex].value);
+		    	alert(firm_age_hash[firm_age_selected]);  
+			});
+
+		});
+	});
+
+
+
+/*censusAPI(52,'g');*/
+
 
