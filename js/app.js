@@ -8,7 +8,7 @@ var censusAPI = function(sector, age){
 	};
 
     var result = $.getJSON(
-       "https://api.census.gov/data/bds/firms?get=sic1,emp,fage4&for=us:*&sic1=" + sector + "&fage4=" + age + "&time=2012"
+       "http://api.census.gov/data/bds/firms?get=sic1,emp,fage4&for=us:*&sic1=" + sector + "&fage4=" + age + "&time=2012"
     ).done(function(res) {
 		var index_array = res[1][1];
 		console.log(index_array);
@@ -53,8 +53,6 @@ $(document).ready(function(){
 			    	sector_selected = (this.options[this.selectedIndex].value);					    	    		
 	    		});
 				
-
-		    		/*alert(sector_selected);*/
 		    	$(".firm-age-dropdown").each(function() {
 			    	firm_age_selected = (this.options[this.selectedIndex].value);
 			    	
