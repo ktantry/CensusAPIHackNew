@@ -10,12 +10,9 @@ var censusAPI = function(sector, age){
     var result = $.getJSON(
        "http://api.census.gov/data/bds/firms?get=sic1,emp,fage4&for=us:*&sic1=" + sector + "&fage4=" + age + "&time=2012"
     ).done(function(res) {
-  		$.each(res, function(index, value) {
-		var index_array = res[index];
-			$.each(index_array, function(i, v){
-				console.log(index_array[i]);
-			})
-		});
+		var index_array = res[1][1];
+		console.log(index_array);
+		$(".results-div").html("<p class='results-paragraph'>There are " +  index_array +  " number of employees within those criteria</p>");
     });
 };
 
@@ -49,22 +46,23 @@ $(document).ready(function(){
 	  		firm_age_hash['Left Censored'] = 'l';
 	  		firm_age_hash['Economy Wide – All Ages (selected by default)'] = 'm';
 
+	  	var sector_selected;
+	  	var firm_age_selected;
+
 				$(".sector-dropdown").each(function() {
-			    	var sector_selected = (this.options[this.selectedIndex].value);		    		
+			    	sector_selected = (this.options[this.selectedIndex].value);					    	    		
 	    		});
-				alert(sector_hash[sector_selected]);   
+				
 
 		    		/*alert(sector_selected);*/
 		    	$(".firm-age-dropdown").each(function() {
-		    	var firm_age_selected = (this.options[this.selectedIndex].value);
-		    	alert(firm_age_hash[firm_age_selected]);  
+			    	firm_age_selected = (this.options[this.selectedIndex].value);
+			    	
 			});
-
+		    	var sector_input = sector_hash[sector_selected]; 
+		    	var firm_age_input = firm_age_hash[firm_age_selected]; 
+		    	censusAPI(sector_input, firm_age_input);	    	
 		});
 	});
-
-
-
-/*censusAPI(52,'g');*/
 
 
