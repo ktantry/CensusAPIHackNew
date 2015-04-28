@@ -33,16 +33,16 @@ $(document).ready(function(){
 	  		sector_hash['Services'] = 70;
 
 	  	var firm_age_hash = new Object();
-	  		firm_age_hash['0'] = 'a';
-	  		firm_age_hash['1'] = 'b';
-	  		firm_age_hash['3'] = 'c';
-	  		firm_age_hash['4'] = 'e';
-	  		firm_age_hash['5'] = 'f';
-	  		firm_age_hash['6-10'] = 'g';
-	  		firm_age_hash['11-15'] = 'h';
-	  		firm_age_hash['16-20'] = 'i';
-	  		firm_age_hash['21-25'] = 'j';
-	  		firm_age_hash['26+'] = 'k';
+	  		firm_age_hash['0-1 years'] = 'a';
+	  		firm_age_hash['1-3 years'] = 'b';
+	  		firm_age_hash['3-4 years'] = 'c';
+	  		firm_age_hash['4-5 years'] = 'e';
+	  		firm_age_hash['5-6 years'] = 'f';
+	  		firm_age_hash['6-10 years'] = 'g';
+	  		firm_age_hash['11-15 years'] = 'h';
+	  		firm_age_hash['16-20 years'] = 'i';
+	  		firm_age_hash['21-25 years'] = 'j';
+	  		firm_age_hash['26+ years'] = 'k';
 	  		firm_age_hash['Left Censored'] = 'l';
 	  		firm_age_hash['Economy Wide – All Ages (selected by default)'] = 'm';
 
