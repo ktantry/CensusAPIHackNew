@@ -18,6 +18,9 @@ var censusAPI = function(sector, age){
 
 $(document).ready(function(){
 	$('button').mousedown(function(){
+		$('.results-div').hide();
+
+
 
 		//Create Sector Hash
 		var sector_hash = new Object();
@@ -59,7 +62,18 @@ $(document).ready(function(){
 			});
 		    	var sector_input = sector_hash[sector_selected]; 
 		    	var firm_age_input = firm_age_hash[firm_age_selected]; 
-		    	censusAPI(sector_input, firm_age_input);	    	
+		    	censusAPI(sector_input, firm_age_input);
+
+
+		    $('.results-div').fadeIn(750).animate(
+			{'left': '1112px'},
+			1000,
+			function(){
+				$(this).fadeOut(750);
+				$(this).css('left', '600px');
+		    	
+			}
+		);    	
 		});
 	});
 
